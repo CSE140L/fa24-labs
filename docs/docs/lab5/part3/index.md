@@ -83,8 +83,8 @@ If you don't need some outputs for a given part, tie them to 0 (we will not be t
 |      INPUT     | `CLK`           | Rising |                 1 | Clock input used for controlling the vending machine                    |
 |      INPUT     | `RST`           |  High  |                 1 | Resets the vending machine                                              |
 |      INPUT     | `BILL`          |    -   |                 2 | 2-bit encoding detailed in [Table C1](https://cse140l.github.io/fa24-labs/docs/lab5/part3/basic_design#table-1) |
-|     OUTPUT     | `CHOCOLATE`     |    -   |                 1 | Whether to dispense a chocolate bar                                     |
-|     OUTPUT     | `BILL_OUT`      |    -   |                 2 | 2-bit encoding detailed in [Table C1](https://cse140l.github.io/fa24-labs/docs/lab5/part3/basic_design#table-2) for subparts 1 and 2, else it is connected to the output of the `RefundSerializer` |
+|     OUTPUT     | `CHOCOLATE`     |    -   |                 2 | 2-bit encoding detailed in [Table C2](https://cse140l.github.io/fa24-labs/docs/lab5/part3/basic_design#table-1)                                    |
+|     OUTPUT     | `BILL_OUT`      |    -   |                 2 | 2-bit encoding detailed in [Table C3](https://cse140l.github.io/fa24-labs/docs/lab5/part3/basic_design#table-2) for subparts 1 and 2, else it is connected to the output of the `RefundSerializer` |
 |     OUTPUT     | `EMPTY`         |  High  |                 1 | Set high when the vending machine is out of chocolates                  |
 |     OUTPUT     | `BUSY`          |  High  |                 1 | Set high when the vending machine is busy                               |
 |     OUTPUT     | `LOCK_3`        |  High  |                 1 | Set high when the vending machine should not accept 3 B$ bills          |

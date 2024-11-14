@@ -17,6 +17,9 @@ nav_order: 1
 
 ---
 
+{: highlight}
+Note to Anish: the `chocolate` width is now 2, not just 1 bit, need to adjust the images accordingly and write this up completely.
+
 ## Introduction
 
 As you know, FSMs can be implemented in a Mealy or in a Moore fashion.
@@ -35,17 +38,17 @@ The encoding is in the table below:
 ### Table 1
 
 {: .text-delta}
-Bill encoding of the inputs
+Encoding for what bill is deposited
 
 | Code | Description |
 |:----:|:-----------:|
-| 00   | Refund      |
+| 00   | Refund[^2]  |
 | 01   | 1 B$        |
 | 10   | 3 B$        |
 | 11   | 5 B$        |
 
 For this vending machine, there are two sets of outputs to consider.
-The first output indicates whether a chocolate is dispensed by the machine where '0' means no Chocolate and '1' means a Chocolate is dispensed.
+The first output indicates whether a chocolate is dispensed by the machine where '0' means no chocolate and '1' means a chocolate is dispensed.
 The next output to consider is concerned with how much change/refund we need to return to the user.
 Suppose that someone inserts a 3 B$ coin and then a 5 B$ coin.
 To maximize your profits, you decide to sell two chocolate bars and offer no refunds.
@@ -58,7 +61,7 @@ For now, the FSM will output the entire change/refund amount in one swoop by usi
 ### Table 2
 
 {: .text-delta}
-Bill encoding of the refund for the current parts
+Encoding for the amount to refund
 
 | Code | Refund Amount |
 |:----:|:-------------:|
@@ -67,11 +70,22 @@ Bill encoding of the refund for the current parts
 | 10   | 2 B$          |
 | 11   | 3 B$          |
 
+### Table 3
+
+{: .text-delta}
+Encoding for the amount of chocolate to refund
+
+| Code | Chocolate Amount |
+|:----:|:----------------:|
+| 00   | 0 chocolates     |
+| 01   | 1 chocolate      |
+| 1X   | 2 chocolates     |
+
 The input and output ports of the VendingMachine that we are asking you to implement takes in the money and provides a chocolate bar and the change shown in the figure below.
 You should need no more than three states to implement this FSM (including the initial state denoting no money having been received yet).
 It should take you no more than two flipflops to capture the state information, and with the two coin inputs, you will be working with 4-input K-maps to generate your next-state logic and the 3 output bits.
 
-![](../../../assets/lab5/fig-2024-011.png)
+![](https://lucid.app/publicSegments/view/9591d9d1-6204-46bb-95e5-78a9f1d17e85/image.png)
 
 {: .note}
 You need a `reset` signal because the initial state for the flipflops in real life is unknown.
@@ -80,3 +94,4 @@ It is much easier to start in a 0 state than it is to start in an unknown one!
 ## Footnotes
 
 [^1]: After a deep 45 minute search we found that the Bahamas is one of the only countries to follow this [denomination scheme](https://www.centralbankbahamas.com/banknotes).
+[^2]: People who take too long depositing 4 B$ into our machine can keep it moving! We have chocolate to sell! But seriously, when testing your circuit, a real time clock might operate too quickly for you to test your circuit correctly. Either manually advance the clock, or use a testbench to automate this process for you.

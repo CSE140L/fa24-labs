@@ -17,7 +17,7 @@ nav_order: 2
 
 ---
 
-## Description of Changes of `VendingMachine`
+## Description of Changes to `VendingMachine`
 
 In this age of instant global communications, your design makes waves worldwide even before your ferry pulls into Nassau again after a quick trip to the outer islands.
 You suspect one of your classmates from 140L, who was always curious about your hardware design progress, may have hacked into your laptop.
@@ -45,5 +45,5 @@ One way you can use the `empty` signal to shut the coin slots could be to gate t
 Gating the `clk` implies ANDing the complement of the `empty` signal and the `clk` so that when the empty signal is '1' the output of this gate is '0' irrespective of the `clk` state.
 The other part you have to implement here is the `reset` signal, which can be used directly to update the chocolate counter to its original state; no change to the FSM is needed.
 
-![](../../../assets/lab5/fig-2024-012.png)
+![](https://lucid.app/publicSegments/view/462a5536-ad86-4217-be21-8ce78c65508e/image.png)
 

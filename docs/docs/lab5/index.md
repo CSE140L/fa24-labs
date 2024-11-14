@@ -62,8 +62,8 @@ Please submit the following files to Gradescope **individually**:
 
 ## Grading
 
-* [Part 1](https://cse140l.github.io/fa24-labs/docs/lab4/part1): 10%
-* [Part 2](https://cse140l.github.io/fa24-labs/docs/lab4/part2): 20%
-* [Part 3](https://cse140l.github.io/fa24-labs/docs/lab4/part3): 50%
-* [Part 4](https://cse140l.github.io/fa24-labs/docs/lab4/part4): 10%
+* [Part 1](https://cse140l.github.io/fa24-labs/docs/lab5/part1): 10%
+* [Part 2](https://cse140l.github.io/fa24-labs/docs/lab5/part2): 20%
+* [Part 3](https://cse140l.github.io/fa24-labs/docs/lab5/part3): 50%
+* [Part 4](https://cse140l.github.io/fa24-labs/docs/lab5/part4): 10%
 * [Lab Report](#lab-report): 10%
