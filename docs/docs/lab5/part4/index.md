@@ -44,12 +44,9 @@ Original Mealy State Machine to detect $Z_1$ and $Z_2$
 
 ![](https://lucid.app/publicSegments/view/f07ecdd3-ad51-467e-bb0c-7ffb2d5a4e4a/image.png)
 
-{: .warning}
-Update this!
-
 While you are *busy* contemplating your fate, trying to figure out how to implement this FSM with unknown inputs on transitions, trying to act like a team player while ruing the fact that you should have invested more time reading murder mysteries, you’re awakened out of your deep reverie by hearing that your task has increased in complexity.
-The FSM you designed (that recognizes $Z_1$ and $Z_2$) should be modified so as to transition to an FSM that only recognizes $Z_2$ once a $Z_2$ has been recognized in the original FSM.
-Thereupon, a single recognition of $Z_2$ will revert the machine back to recognizing both $Z_1$ and $Z_2$.
+The FSM you designed (that recognizes $Z_1$ and $Z_2$) should be modified so as to transition to an FSM that only recognizes $Z_1$ once a $Z_2$ has been recognized in the original FSM.
+Thereupon, a single recognition of $Z_1$ will revert the machine back to recognizing both $Z_1$ and $Z_2$.
 The behavioral description of the FSM is given in [Figure 4.2](#figure-4.2). 
 
 ### Figure 4.2
