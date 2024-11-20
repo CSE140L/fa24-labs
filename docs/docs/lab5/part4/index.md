@@ -31,7 +31,7 @@ Not only do you know how to set them up, but you can also by now decode them and
 
 The magnitude of your task becomes clearer when you are told that the input sequences that activate the transitions will not be given to you either.
 Only the output behavior and the FSM!
-In desperation you steal a furtive glance at the notes of your new boss' right-hand man, who seems to have the complete information, and manage to see a single input condition on one of the transitions ($S_1 \rightarrow S_1$) on this Mealy machine, which you annotate onto the specification given by your boss in [Figure 4.1](#figure-4.1).
+In desperation you steal a furtive glance at the notes of your new boss' right-hand man, who seems to have the complete information, and manage to see a single input condition on one of the transitions $(S_3 \rightarrow S_2)$ on this Mealy machine, which you annotate onto the specification given by your boss in [Figure 4.1](#figure-4.1).
 Your spirits are a bit lifted when you notice that thankfully there is only a single input variable. 
 
 ### Figure 4.1
@@ -58,12 +58,12 @@ Behavioral description of the FSM
 
 In an emotional state laden with anger, denial, and grief mixed in with technical arrogance (and once you are past the stage of reading murder mysteries) you decide to invest in a rereading of your lecture notes.
 You soon realize that the analogous example in your notes is a classic example of **FSM composition** that your professor outlined, wherein once $Z_2$ has been detected in the full FSM (that recognizes $Z_1$ and $Z_2$), the reduced FSM will be transitioned into.
-You do have the FSM that recognizes $Z_1$ and $Z_2$, but you are at your wits' end as to how to construct the reduced FSM (the one that recognizes $Z_2$ only).
+You do have the FSM that recognizes $Z_1$ and $Z_2$, but you are at your wits' end as to how to construct the reduced FSM (the one that recognizes $Z_1$ only).
 
 Being the top student that you were in your long-gone days of youth when you were taking CSE 140L at your alma mater and remembering your prowess at coming up with creative solutions to challenging logic design problems, you set yourself down to study your technical predicament.
 A bit of reflection informs you that the second reduced FSM can be simply obtained by using the first FSM and setting the $Z_2$ output to 0 in the cases when it was 1 in the original FSM.
 So, duplicating the FSM with a small change in the $Z_2$ output has resulted in the desired FSM.
-The connecting transition between the two FSMs is effected by having the $Z_1$ or $Z_2$ recognizing transitions in the original FSM go to their counterpart states in the reduced FSM.
+The connecting transition between the two FSMs is effected by having $Z_2$ recognizing transitions in the original FSM go to its counterpart state in the reduced FSM.
 The transition from the $Z_1$ only recognizing FSM back to the original FSM can be similarly constructed.
 
 Your pride at your technical prowess is unbounded and hope glimmers that you will be able, perhaps, to not only fulfill the task but one-up your boss as well.
@@ -73,7 +73,7 @@ How do you minimize the states in this composite FSM whose transition inputs are
 You quickly realize that to implement the FSM, you need to crack the puzzle of what the input transitions are.
 For this, you go back to the well-worn pages of your lecture notes and realize that pattern recognizer FSM structures may provide insights into the transition inputs.
 You manage to fully uncover all the transition inputs on your composite FSM.
-With all the transitions visible, you are able to induce the equivalence of two states in the initial FSM (that detects only $Z_1$), thus saving you one.
+With all the transitions visible, you are able to induce the equivalence of two states in the second FSM (that detects only $Z_1$), thus saving you one.
 After the first minimization, you notice that there is another pair of equivalent states that can be merged, reducing your states from the original ten down to eight and effectively saving you a flip-flop (and even more importantly reducing the size of your K-maps)! 
 
 {: .warning}
@@ -99,22 +99,18 @@ Buoyed by your technical prowess, sensing the battlefield shifting in your direc
 8. Show your next-state and output K-maps for the FSM implemented with JK flip-flops. Show your logic in SOP form. Tell us the total number of 2-input AND/OR gates your design represents. 
 9. Please explain how the constructed Karnaugh maps and logic expressions for two implemented FSMs with the SR and JK flip-flops differ.
 
-{: .warning}
-Need to check out what the circuit would look like, and do the K-maps
-
 ## Circuit Structure
 
 {: .warning}
 Failure to follow this structure can result in grading of the lab to be delayed or incorrect.
 
-You will create two circuits for this part, `BoothsMultiplierMealy.dig` and `BoothsMultiplierMoore.dig` that follows the same pinout from Lab 2.
+You will create two circuits for this part, `SequenceDetector.dig` (which contains [Figure 4.1's](#figure-41) FSM) and `CompoundSequenceDetector.dig` (which contains [Figure 4.2's](#figure-42) FSM).
+Both of these circuits will follow the following pinout:
 
 | Port Direction | Port Name       | Active | Port Width (bits) | Description                                                             |
 |:--------------:|-----------------|:------:|------------------:|-------------------------------------------------------------------------|
-|      INPUT     | `CLK`           | Rising |                 1 | Clock input used for controlling the multiplier                         |
-|      INPUT     | `CLR`           |  High  |                 1 | Clears the multiplier to allow it for later reuse                       |
-|      INPUT     | `MULTIPLIER`    |    -   |                13 | 13-bit signed decimal input as multiplier                               |
-|      INPUT     | `MULTIPLICAND`  |    -   |                13 | 13-bit signal decimal input as multiplicand                             |
-|     OUTPUT     | `RESULT`        |    -   |                26 | 26-bit signed decimal output as a result from your multiplication       |
-|     OUTPUT     | `OP_DONE`       |    -   |                 2 | The operation you have performed (addition, subtraction, or no-op)      |
-|     OUTPUT     | `DONE`          |  High  |                 1 | Set high when you have finished the multiplication                      |
+|      INPUT     | `CLK`           | Rising |                 1 | Clock used to synchronize the FSM |
+|      INPUT     | `CLR`           |  High  |                 1 | Signal to reset the FSM (if necessary) |
+|      INPUT     | `INPUT`         |    -   |                 1 | Input signal |
+|     OUTPUT     | `Z_1`           |  High  |                 1 | Whether or not $Z_1$ was recognized by the FSM |
+|     OUTPUT     | `Z_2`           |  High  |                 1 | Whether or not $Z_2$ was recognized by the FSM |

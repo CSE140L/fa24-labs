@@ -17,9 +17,6 @@ nav_order: 1
 
 ---
 
-{: highlight}
-Note to Anish: the `chocolate` width is now 2, not just 1 bit, need to adjust the images accordingly and write this up completely.
-
 ## Introduction
 
 As you know, FSMs can be implemented in a Mealy or in a Moore fashion.
@@ -81,8 +78,8 @@ Encoding for the amount of chocolate to refund
 | 01   | 1 chocolate      |
 | 1X   | 2 chocolates     |
 
-The input and output ports of the VendingMachine that we are asking you to implement takes in the money and provides a chocolate bar and the change shown in the figure below.
-You should need no more than three states to implement this FSM (including the initial state denoting no money having been received yet).
+The input ports `VendingMachine` that we are asking you to implement takes in the money and the output ports provides a chocolate bar and the change shown in the figure below.
+You should need no more than four states to implement this FSM (including the initial state denoting no money having been received yet).
 It should take you no more than two flipflops to capture the state information, and with the two coin inputs, you will be working with 4-input K-maps to generate your next-state logic and the 3 output bits.
 
 ![](https://lucid.app/publicSegments/view/9591d9d1-6204-46bb-95e5-78a9f1d17e85/image.png)
@@ -93,5 +90,5 @@ It is much easier to start in a 0 state than it is to start in an unknown one!
 
 ## Footnotes
 
-[^1]: After a deep 45 minute search we found that the Bahamas is one of the only countries to follow this [denomination scheme](https://www.centralbankbahamas.com/banknotes).
-[^2]: People who take too long depositing 4 B$ into our machine can keep it moving! We have chocolate to sell! But seriously, when testing your circuit, a real time clock might operate too quickly for you to test your circuit correctly. Either manually advance the clock, or use a testbench to automate this process for you.
+[^1]: After a deep 45 minute search we found that the Bahamas is one of very few countries to follow this [denomination scheme](https://www.centralbankbahamas.com/banknotes).
+[^2]: People who take too long depositing 4 B$ into our machine can keep it moving! We have chocolate to sell! But seriously, when testing your circuit, a real-time clock might operate too quickly for you to test your circuit correctly. Either manually advance the clock, or use a testbench to automate this process for you. Our testbenches won't ask for a refund unless we mean it to, meaning that if we deposit bills back to back, we will do so in subsequent clock cycles, with no gaps left behind.

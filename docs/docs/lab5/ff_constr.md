@@ -118,7 +118,7 @@ JK Flip-Flop Characteristic Table
 | $0$ | $0$ | $Q$ | $\overline{Q}$  |
 | $0$ | $1$ | $0$ | $1$  |
 | $1$ | $0$ | $1$ | $0$  |
-| $0$ | $0$ | $\overline{Q}$ | $Q$  |
+| $1$ | $1$ | $\overline{Q}$ | $Q$  |
 
 ### Table 5
 
@@ -144,7 +144,7 @@ One of the important tasks that needs to be conveyed during FSM designs and sett
 For example, you can see a $Q$ value of $0$ being modified to a $Q_{\text{next}}$ value of $1$ in an SR flip-flop by having a $1$ in the $S$ input and $0$ in the $R$.
 Similarly, retaining in $Q_{\text{next}}$ the original value of $Q=1$ can be accomplished either by communicating $SR=10$ as before or $SR=00$ for simply holding the value of $1$ across clock cycles.
 These two options can be spelled out as a $Q$ value of $0$ and a don’t care for $S$.
-These relationships are captured in excitation tables which delineate the inputs necessary to accomplish a $Q$ to $Q_{\text{next}}$ transition.
+These relationships are captured in **excitation tables** which delineate the inputs necessary to accomplish a $Q$ to $Q_{\text{next}}$ transition.
 We provide you the excitation tables for the SR, JK, D, and T flip-flops in tables in T7, T8, T9, and T10, respectively.
 
 ### Table 7
@@ -186,7 +186,7 @@ D Flip-Flop Excitation Table
 ### Table 10
 
 {: .text-delta}
-D Flip-Flop Excitation Table
+T Flip-Flop Excitation Table
 
 |$\boldsymbol{Q}$ | $\boldsymbol{Q_{\text{next}}}$ | $\boldsymbol{T}$ | 
 |:---:|:---:|:---:|
@@ -223,7 +223,7 @@ A **Moore machine**, on the other hand, generates outputs based on the current s
 
 The minimization of states is based on the observation that equivalent states can be merged.
 How does one identify if two states are equivalent? A cursory examination will indicate that satisfaction of two straightforward conditions will suffice in determining equivalence.
-First, the outputs of the two states in question must match for every input.
+First, the outputs of the two states in question must match (for every input in the case of Mealy).
 Second, the two states must transition to the same state when supplied identical inputs.
 While these two conditions suffice, one can observe that the second condition can be relaxed, thus expanding the possibilities for equivalence.
 Transitioning to the identical state (on the same inputs) suffices, yet transitioning to an equivalent state (on the same inputs) will do as well (since if the states are equivalent, they will reduce to the same state, thus making this expanded condition equivalent to the original one).
@@ -288,7 +288,7 @@ In summary, we have the following sets that are specified by the first and secon
 2. { ($S_0$, $S_1$), ($S_1$, $S_2$), ($S_0$, $S_1$) }
 
 We should attempt to fulfill as many of these adjacency conditions as possible, but it is worth noting that in most cases you will be unable to satisfy every constraint set by the heuristic.
-If this is the case you should first attempt to satisfy every set (if that proves impossible, the maximum set) in your first adjacency heuristic, and then move on to satisfying your second heuristic (and prioritize by the number-of-times weight discussed within each heuristic).
+If this is the case you should first attempt to satisfy every set (if that proves impossible, the maximum set) in your first adjacency heuristic, and then move on to satisfying your second heuristic (and prioritize by the number-of-times weight discussed within each set).
 In this example, you will note that the first priority pair of ($S_0$, $S_2$) can be easily satisfied, but the triplet of ($S_0$, $S_1$, $S_2$) suggests that the underlying three pairs should all lie within a distance of 1 of each other, which is impossible.
 We have a choice therefore of either making $S_1$ adjacent to $S_0$ or $S_2$.
 Looking at the second priority list, we notice that the pair ($S_0$, $S_1$) is listed twice, whereas the pair ($S_1$, $S_2$) is listed only once, boosting the preference for aligning $S_1$ with $S_0$.
@@ -317,7 +317,7 @@ $$
 \end{align*}
 $$
 
-Moreover, we can implement Karnaugh map for the next state logic for the JK flip-flops by using the JK flip-flop excitation table in Table 8 (each entry in a square corresponds to $J_0$, $K_0$, $J_1$, and $K_1$ in that order):
+Moreover, we can set a Karnaugh map for the next state logic for the JK flip-flops by using the JK flip-flop excitation table in Table 8 (each entry in a square corresponds to $J_0$, $K_0$, $J_1$, and $K_1$ in that order):
 
 ### Table 13
 
@@ -344,4 +344,4 @@ Throughout your lab assignments, you will use the outlined heuristics to make st
 
 ## Footnotes
 
-[^1]: You may find the primary-secondary configuration being referred to *master-slave* pair in older texts.
+[^1]: You may find the primary-secondary configuration being referred to as the *master-slave* pair in older texts.

@@ -19,7 +19,7 @@ nav_order: 3
 
 ## Implementation Guidelines
 
-Now that you have created a PT flip-flop using a JK flip-flop which was essentially created from an SR flip-flop, let us come full circle and use the PT flip-flop to create an SR flip-flop.
+Now that you have created a PT flip-flop using a JK flip-flop which was essentially created from an SR flip-flop, let us circle back and use the PT flip-flop to create an SR flip-flop.
 
 Even though the PT flip-flop is complete, it doesn’t have the desirable property of generating the excitation table that captures all the transitions through the simple and convenient mechanism of don’t cares, similar to a JK flip-flop.
 For example, for the transition from $Q = 1$ to $Q_{\text{next}} = 1$ to be excited, the condition is either {$P=0$ and $T=0$} or {$P=1$ and $T=1$}, which cannot be captured by one designation in the excitation table.

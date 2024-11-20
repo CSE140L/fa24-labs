@@ -95,13 +95,15 @@ SR values given $D$ and $Q$.
 Select the minimum covers for the SR K-maps.
 The function with inputs D and Q will be fed into the SR input of an SR flip-flop to induce the functionality of a D flip-flop.
 
-You should implement this DFF **using no additional AND/OR logic gates (NOT gates only)**.
+You should implement this DFF **using no AND/OR logic gates (NOT gates only)**.
 Please use the `RS-Flip-Flop, clocked` component from *Digital* for the SR-FF.
-Please **read the documentation** regarding this component to better understand how it functions in the edge cases""
+Please **read the documentation** (relevant part included below with emphasis on the important part) regarding this component to better understand how it functions in the edge cases.
 
+> **Digital Documentation**
+> 
 > A component to store a single bit.
-> Provides the functions "set" and "reset" to set or reset the stored bit.
-> If both inputs (S, R) are set at the rising edge of the clock, the final state is random. 
+> Provides the functions `set` and `reset` to set or reset the stored bit.
+> *If both inputs (S, R) are set at the rising edge of the clock, the final state is random.*
 
 ## Deliverables
 

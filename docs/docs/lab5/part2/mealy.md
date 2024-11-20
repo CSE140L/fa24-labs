@@ -85,7 +85,7 @@ Whenever a shift occurs, the counter will be signaled to increment by 1.
 The FSM will have an additional input that will signal when the counter has counted to $N$, indicating that $N$ shifts have occurred.
 This input will cause the 00 and 11 states (or whatever the equivalent states are) to transition to the end state, where the FSM will remain until the circuit is reset.
 
-Finally, we have a complete controller that can both control the datapath by indicating whether a shift or an arithmetic operation should be performed, as the original controller from Lab 2 did, as well as indicate whether an add or a shift should be performed, all while skipping unnecessary operations! 
+Finally, we have a complete controller that can both control the datapath by indicating whether a shift or an arithmetic operation should be performed, as the original controller from Lab 2 did, as well as indicate whether an addition or a subtraction should be performed, all while skipping unnecessary operations! 
 
 The procedure to designing this newer, smarter controller is summarized below:
 

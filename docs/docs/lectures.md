@@ -21,3 +21,5 @@ Lecture slides are provided below:
 3. [Lecture 4 & 5](https://docs.google.com/presentation/d/11c6_BuW94viVkY2xrSv2KoAVQPshkCrW/edit?usp=sharing&ouid=113086848396961671481&rtpof=true&sd=true)
 
 4. [Lecture 6 & 7](https://docs.google.com/presentation/d/1dArccp_MsD2jw1URCnCHG_rQiZCzQsQo/edit?usp=sharing&ouid=117025573451423217663&rtpof=true&sd=true)
+
+5. [Lecture 8, 9, 10](https://docs.google.com/presentation/d/1SMnTaCg6S7-z82_BkWjnW2wV8thzIX7Y/edit?usp=sharing&ouid=117025573451423217663&rtpof=true&sd=true)

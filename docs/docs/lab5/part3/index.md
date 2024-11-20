@@ -46,13 +46,12 @@ This trip may have started as a break from your studies, but it’s quickly beco
 You will implement four different versions of the `VendingMachine` part in this section.
 You will notice that some inputs and states are unused in the FSMs.
 These unused input/state combinations are represented as don't cares in the Karnaugh maps and can be used to simplify the next state and output logic.
-You will notice that the Mealy-based `VendingMachine` FSM can be constructed with 3 states.
+You will notice that the Mealy-based `VendingMachine` FSM can be constructed with 4 states.
 The `VendingMachine` FSMs in this section should be implemented with the state encoding following the input bill encoding using DFFs.
 Similarly, the `RefundSerializer` should use for its state encoding the refund encoding and it should also be implemented with DFFs.
 Please use a 4-bit counter to keep track of the number of chocolates in subparts 2 to 4 and 8-bit counters for bill counters in parts 3 to 4, except for the bonus part where you can set these parameters as you deem appropriate.
-You need to set the chocolate counter and all the bill counters to 15 for subparts 2 to 4 during the reset process.
-Initialise the bill counters to 31 for subpart 3 and to zero in subpart 4 during the same reset process.
-The chocolate counter is initialized throughout to 15.
+You need to set the chocolate counter to 15 for subparts 2 to 4 during the reset process.
+Additionally, you will need to initialise the bill counters to 31 for subpart 3 and to zero in subpart 4 during the same reset process.
 The `empty` signal should be asserted as 1 if the chocolate counter reaches the value 0.
 
 {: .highlight-title}

@@ -21,7 +21,7 @@ nav_order: 2
 
 In this age of instant global communications, your design makes waves worldwide even before your ferry pulls into Nassau again after a quick trip to the outer islands.
 You suspect one of your classmates from 140L, who was always curious about your hardware design progress, may have hacked into your laptop.
-The leaked design of the `VendingMachine` controller is being praised on forums, but you feel a pang of frustration—this was supposed to be your big break.
+The leaked design of the `VendingMachine` controller is being praised on forums, but you feel a pang of frustration—this was supposed to be *your* big break.
 
 Determined to outpace any competition, you rush to the nearest tech store in Nassau and buy a brand-new laptop.
 You meticulously set it up with enhanced security measures and install your favorite software: *Digital*.
@@ -38,7 +38,7 @@ By the time the ferry docks, you’re not just ahead of the competition—you’
 The first problem you decide to tackle is related to the accounting of the number of chocolate bars remaining in the machine to preclude the possibility of a customer being charged while you are out of chocolate bars.
 While the idea of making money out of supplying nothing initially sounds appealing, you soon realize that this approach will result in your vending machine company going bankrupt and decide to upgrade your `VendingMachine` to indicate that the machine is empty by using an additional `empty` signal, and by shutting down the coin slots so that no coin can be inserted.
 Your machine has a maximum capacity of holding 15 chocolates at a time.
-**You will need to count the number of chocolate bars by using a 4-bit counter in this version of the `VendingMachine` and asserting the `empty` signal to 1 if no chocolate bar is available.**
+**You will need to count the number of chocolate bars by using the provided 4-bit `ChocolateCounter` in this version of the `VendingMachine` and asserting the `empty` signal to 1 if no chocolate bar is available.**
 Once you see an `empty` signal, the machine will start normal operation after you fill it with 15 chocolates, which needs exactly a 4-bit counter, by applying the reset signal.
 
 One way you can use the `empty` signal to shut the coin slots could be to gate the `clk` input to your FSM, thus disabling it.
@@ -47,3 +47,14 @@ The other part you have to implement here is the `reset` signal, which can be us
 
 ![](https://lucid.app/publicSegments/view/462a5536-ad86-4217-be21-8ce78c65508e/image.png)
 
+## `ChocolateCounter`
+
+The pinout table for the chocolate counter is provided as follows:
+
+| Port Direction | Port Name       | Active | Port Width (bits) | Description                                                             |
+|:--------------:|-----------------|:------:|------------------:|-------------------------------------------------------------------------|
+|      INPUT     | `CLK`           | Rising |                 1 | Clock input used for the counter                                        |
+|      INPUT     | `RST`           |  High  |                 1 | Sets the counter to have the maximum number of chocolates               |
+|      INPUT     | `IN`            |    -   |                 2 | Chocolate encoding according to [Table 3.1.3](https://cse140l.github.io/fa24-labs/docs/lab5/part3/basic_design#table-3)                             |
+|     OUTPUT     | `EMPTY`         |  High  |                 1 | Whether or not the counter is empty       |
+|     OUTPUT     | `COUNT`         |    -   |                 4 | The number of chocolates that are currently stored |

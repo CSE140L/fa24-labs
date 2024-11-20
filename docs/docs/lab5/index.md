@@ -4,11 +4,6 @@ layout: katex
 nav_order: 7
 ---
 
-{: .warning}
-This lab is unfinished, things are subject to change.
-You are more than welcome to read what is coming up and prepare accordingly.
-This is the **hardest** lab of the quarter, please start early.
-
 # Sequential Circuit Design
 {: .no_toc}
 
@@ -28,10 +23,7 @@ December 6th, 2024
 
 ---
 
-{: .warning}
-There are no late days for this assignment.
-
-## Introdution
+## Introduction
 
 This lab assignment consists of four major sections.
 In the first part, you will learn how to create a variety of flip-flops by construction transformation logic on a basic flip-flop.

@@ -22,7 +22,7 @@ nav_order: 2
 JK flip-flops are *complete* flip-flops where each of the 4 possible functions, namely set (1), reset (0), hold ($Q$), and toggle ($\overline{Q}$), appears once in its characteristic table.
 When these four functions exist in the characteristic table of a flip-flop, each transition can be excited by exactly two of them, leading hopefully to don’t cares in its excitation table.
 
-Now that you crafted a D-FF from an SR-FF you quickly realize realize that one can create many other complete flip-flops by simply shuffling the assignment of operations to rows of the characteristic table.
+Now that you crafted a D-FF from an SR-FF you quickly realize that one can create many other complete flip-flops by simply shuffling the assignment of operations to rows of the characteristic table.
 For example, let’s call the flip-flop below a PT flip-flop.
 
 
@@ -54,7 +54,7 @@ JK Flip-Flop Excitation Table
 | $1$ | $0$ |  X  | $1$  |
 | $1$ | $1$ |  X  | $0$  |
 
-You should be able to implement this with **no additional logic gates**.
+You should be able to implement this with **one logic gate**.
 
 ## Deliverables
 
