@@ -80,7 +80,7 @@ After the first minimization, you notice that there is another pair of equivalen
 Need to update these gate counts!
 
 Once you have evened the playing field, you set on making your boss come up short by shaking up her throne and getting her fired while getting your long-deserved promotion in the process.
-You remember overhearing her saying that the next state logic is composed of **about 18 two-input gates** when using the **Sum-of-Products form** in a **`RS flip-flop, clocked` implementation**, and **about 16 two-input gates** when using the **Sum-of-Products form** in a **`JK flip-flop` implementation**.
+You remember overhearing her saying that the next state logic is composed of **about 22 two-input gates** when using the **Product-of-Sums form** in a **`RS flip-flop, clocked` implementation**, and **about 20 two-input gates** when using the **Product-of-Sums form** in a **`JK flip-flop` implementation**.
 You decide to two-up her and use your great skills at prioritized adjacency coding you learned in 140L.
 Seeing that you seem to have done the impossible, your long-time colleagues that had hurried over to your boss’s side, sensing that you are history, are now slowly coming back to your side.
 Buoyed by your technical prowess, sensing the battlefield shifting in your direction, you set out to find a leaner next state logic that beats that of your boss.
@@ -95,8 +95,8 @@ Buoyed by your technical prowess, sensing the battlefield shifting in your direc
 4. The priority 1 and priority 2 groups for your prioritized adjacency technique.
 5. Describe the approach you took for resolving these groups and how you arrived at a solution that satisfies primarily priority 1 groups and secondarily priority 2 groups.
 6. Provide a table of your symbolic states and corresponding encodings.
-7. Show your next-state and output K-maps for the FSM implemented with SR flip-flops. Show your logic in SOP form. Tell us the total number of 2-input AND/OR gates your design represents. 
-8. Show your next-state and output K-maps for the FSM implemented with JK flip-flops. Show your logic in SOP form. Tell us the total number of 2-input AND/OR gates your design represents. 
+7. Show your next-state and output K-maps for the FSM implemented with SR flip-flops. Show your logic in POS form. Tell us the total number of 2-input AND/OR gates your design represents. 
+8. Show your next-state and output K-maps for the FSM implemented with JK flip-flops. Show your logic in POS form. Tell us the total number of 2-input AND/OR gates your design represents. 
 9. Please explain how the constructed Karnaugh maps and logic expressions for two implemented FSMs with the SR and JK flip-flops differ.
 
 ## Circuit Structure

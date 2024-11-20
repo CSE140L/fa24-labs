@@ -30,7 +30,27 @@ We ask that you implement the new controller twice: once as a Mealy machine and 
 {: .warning}
 Failure to follow this structure can result in grading of the lab to be delayed or incorrect.
 
-You will create two circuits for this part, `BoothsMultiplierMealy.dig` and `BoothsMultiplierMoore.dig` that follows the same pinout from Lab 2.
+You will create four circuits for this part, `MealyController.dig`, `MooreController.dig`, and `BoothsMultiplierMealy.dig` and `BoothsMultiplierMoore.dig` that follows the same pinouts from Lab 2.
+
+### Controller Pinout
+
+{: .note}
+We ask for `MULTIPLIER` and `MULTIPLICAND` inputs here, but this may not be the same as the `BoothsMultiplier`'s signals.
+Aside from the FSM itself, this component shouldn't house any of the shift registers, this is a standalone controller that should be used in conjunction with your pre-existing multiplier logic.
+
+| Port Direction | Port Name       | Active | Port Width (bits) | Description                                                             |
+|:--------------:|-----------------|:------:|------------------:|-------------------------------------------------------------------------|
+|      INPUT     | `CLK`           | Rising |                 1 | Clock input used to produce outputs for controlling the multiplier      |
+|      INPUT     | `RST`           |  High  |                 1 | Resets the control unit                                                 |
+|      INPUT     | `MULTIPLIER`    |    -   |                13 | 13-bit signed decimal input as multiplier                               |
+|      INPUT     | `MULTIPLICAND`  |    -   |                13 | 13-bit signal decimal input as multiplicand                             |
+|     OUTPUT     | `END`           |  High  |                 1 | Indicates that the multiplication is completed                          |
+|     OUTPUT     | `INIT`          |  High  |                 1 | The signal to initialize the multiplication process                     |
+|     OUTPUT     | `EX_OP`         |  High  |                 1 | Denotes whether or not to perform an operation (Add/Subract)            |
+|     OUTPUT     | `SHIFT`         |  High  |                 1 | Denotes whether or not to shift the partial sum                         |
+
+
+### Multiplier Pinout
 
 | Port Direction | Port Name       | Active | Port Width (bits) | Description                                                             |
 |:--------------:|-----------------|:------:|------------------:|-------------------------------------------------------------------------|
