@@ -40,7 +40,7 @@ As you can see, each edge is annotated with a pair of values separated by a slas
 The left symbol on an edge denotes the input value of the FSM.
 The value after the slash is the output value, where a $1$ indicates an addition, a $\underline{1}$ indicates a subtraction, and a $0$ indicates a no-op.
 You may wonder how a single state can have two different outputs for the same 2-bit pattern in Booth's algorithm.
-For example, we have usually associated 00 with a no-op, according to Booth's algorithm as we saw it in Lab 2, but here the output of the 00 state can be either a 0 or a 1 (either a no-op or a subtraction).
+For example, we have usually associated 00 with a no-op, according to Booth's algorithm as we saw it in Lab 2, but here the output of the 00 state can be either a 0 or a $\underline{1}$ (either a no-op or a subtraction).
 The puzzle can be resolved by realizing that the pattern associated with each state in the Mealy machine represents the *previous* pattern held in the 2-bit window under examination in Booth's, and the input to the FSM is the bit that was newly shifted into the 2-bit window (that is, the FSM input is the current least significant bit of the multiplier).
 Since the previous value of the 2-bit window is remembered by the current state, we no longer need the extra flip-flop after the least significant bit of the multiplier to hold the last value shifted out of the multiplier in our Booth's circuit from Lab 2.
 An additional benefit of this representation is that since the state is associated with the previous value, the Mealy machine can be directly initialized to state 00 (even if the LSB of the original multiplier is 1).
