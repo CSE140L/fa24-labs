@@ -34,21 +34,11 @@ You will create four circuits for this part, `MealyController.dig`, `MooreContro
 
 ### Controller Pinout
 
+The pinouts for the controller can be found in the following sections at the bottom.
+
 {: .note}
-We ask for `MULTIPLIER` and `MULTIPLICAND` inputs here, but this may not be the same as the `BoothsMultiplier`'s signals.
-Aside from the FSM itself, this component shouldn't house any of the shift registers, this is a standalone controller that should be used in conjunction with your pre-existing multiplier logic.
-
-| Port Direction | Port Name       | Active | Port Width (bits) | Description                                                             |
-|:--------------:|-----------------|:------:|------------------:|-------------------------------------------------------------------------|
-|      INPUT     | `CLK`           | Rising |                 1 | Clock input used to produce outputs for controlling the multiplier      |
-|      INPUT     | `RST`           |  High  |                 1 | Resets the control unit                                                 |
-|      INPUT     | `MULTIPLIER`    |    -   |                13 | 13-bit signed decimal input as multiplier                               |
-|      INPUT     | `MULTIPLICAND`  |    -   |                13 | 13-bit signal decimal input as multiplicand                             |
-|     OUTPUT     | `END`           |  High  |                 1 | Indicates that the multiplication is completed                          |
-|     OUTPUT     | `INIT`          |  High  |                 1 | The signal to initialize the multiplication process                     |
-|     OUTPUT     | `EX_OP`         |  High  |                 1 | Denotes whether or not to perform an operation (Add/Subract)            |
-|     OUTPUT     | `SHIFT`         |  High  |                 1 | Denotes whether or not to shift the partial sum                         |
-
+The pins we specify here are the **minimum** required pins for a component.
+You can have more inputs or outputs if you want for debugging purposes, we will not be touching them.
 
 ### Multiplier Pinout
 
