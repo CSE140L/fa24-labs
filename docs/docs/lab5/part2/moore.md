@@ -93,6 +93,7 @@ The inputs are summarized as:
 |      INPUT     | `COMPLETED`     |    -   |                 1 | A logic 1 on this input means $N$ shifts have occurred, and a transition to the `END` state should occur next. Else, the input should be a logic 0. This input is driven by a counter (and a few extra gates). |
 |     OUTPUT     | `EX_OP`         |    -   |                 2 | 2-bit output according to [Table 2.1](https://cse140l.github.io/fa24-labs/docs/lab5/part2/mealy#table-2.1). |
 |     OUTPUT     | `DONE`          |  High  |                 1 | Set high when you have finished the multiplication                      |
+|     OUTPUT     | `INIT`          |  High  |                 1 | Set high at start of multiplication                      |
 
 Again, the `CLK` and `RST` inputs are not used when deriving your next state and output logic.
 Additionally, the `CURRENT_SHIFT` input can be ignored when deriving your logic for simplicity.
