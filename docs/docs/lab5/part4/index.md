@@ -76,9 +76,6 @@ You manage to fully uncover all the transition inputs on your composite FSM.
 With all the transitions visible, you are able to induce the equivalence of two states in the second FSM (that detects only $Z_1$), thus saving you one.
 After the first minimization, you notice that there is another pair of equivalent states that can be merged, reducing your states from the original ten down to eight and effectively saving you a flip-flop (and even more importantly reducing the size of your K-maps)! 
 
-{: .warning}
-Need to update these gate counts!
-
 Once you have evened the playing field, you set on making your boss come up short by shaking up her throne and getting her fired while getting your long-deserved promotion in the process.
 You remember overhearing her saying that the next state logic is composed of **about 22 two-input gates** when using the **Product-of-Sums form** in a **`RS flip-flop, clocked` implementation**, and **about 20 two-input gates** when using the **Product-of-Sums form** in a **`JK flip-flop` implementation**.
 You decide to two-up her and use your great skills at prioritized adjacency coding you learned in 140L.
@@ -104,7 +101,7 @@ Buoyed by your technical prowess, sensing the battlefield shifting in your direc
 {: .warning}
 Failure to follow this structure can result in grading of the lab to be delayed or incorrect.
 
-You will create two circuits for this part, `SequenceDetector.dig` (which contains [Figure 4.1's](#figure-41) FSM) and `CompoundSequenceDetector.dig` (which contains [Figure 4.2's](#figure-42) FSM).
+You will create two circuits for this part, `SRCompositeDetector.dig` and `JKCompositeDetector.dig` (which contains [Figure 4.2's](#figure-42) FSM) but implemented with SR and JK flip-flops respectively.
 Both of these circuits will follow the following pinout:
 
 | Port Direction | Port Name       | Active | Port Width (bits) | Description                                                             |
